@@ -1,4 +1,4 @@
-request = require("request");
+const request = require("request");
 
 const fetchBreedDescription = function(breedName, callback) {
 
@@ -12,11 +12,11 @@ const fetchBreedDescription = function(breedName, callback) {
       console.log('Breed not found');
     }
     if (error) {
-    console.error("there has been an error:", error);
+      console.error("there has been an error:", error);
     }
-    if(body) {
+    if (body) {
       const data = JSON.parse(body);
-      if(data && data[0]) {
+      if (data && data[0]) {
         const data = JSON.parse(body);
         console.log(data[0].description);
         console.log(typeof data);
